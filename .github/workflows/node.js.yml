@@ -11,6 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: main
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js (18)
@@ -21,4 +22,8 @@ jobs:
     - run: npm install
     - run: npm ci
     - name: Run tests
+      env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          OPENAI_ORG: ${{ secrets.OPENAI_ORG }}
       run: npm test
