@@ -11,7 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    environment: main
+    environment: gitActions
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js (18)
