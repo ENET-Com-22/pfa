@@ -18,12 +18,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18
-        cache: 'npm'
     - run: npm install
     - run: npm ci
     - name: Run tests
       env:
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
-          OPENAI_ORG: ${{ secrets.OPENAI_ORG }}
+        DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+        OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+        OPENAI_ORG: ${{ secrets.OPENAI_ORG }}
       run: npm test
